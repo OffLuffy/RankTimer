@@ -1,0 +1,32 @@
+name: ${project.artifactId}
+author: OffLuffy
+description: ${project.description}
+api-version: 1.13
+version: ${project.version}
+main: ${project.groupId}.${project.name}.${project.name}
+commands:
+  ranktimertoggle:
+    description: Toggles the plugin's event listeners, effectively disabling the plugin
+    permission: ranktimer.toggle
+    usage: /rttoggle
+    aliases: [rttoggle]
+  ranktimertogglemetrics:
+    description: Toggles the plugin's metrics
+    permission: ranktimer.togglemetrics
+    usage: /rttogglemetrics
+    aliases: [rttogglemetrics]
+  ranktimerreload:
+    description: Reloads RankTimer config
+    permission: ranktimer.relaod
+    usage: /rtreload
+    aliases: [rtreload]
+permissions:
+  ranktimer.toggle:
+    description: Allows a user to use /rttoggle
+    default: op
+  ranktimer.togglemetrics:
+    description: Allows a user to use /rttogglemetrics
+    default: op
+  ranktimer.reload:
+    description: Allows a user to use /rtreload
+    default: op

@@ -1,0 +1,33 @@
+enable-metrics: true
+enabled: true
+logging-settings:
+  log-debug: false
+  log-info: true
+  log-warning: true
+# Don't consider OP players for rank-ups if true
+ignore-op: true
+# Don't consider any players in any of these groups for rank-ups
+ignore-groups:
+- Admin
+- Owner
+- Moderator
+rank-up-timers:
+  # Name this anything, it's not used elsewhere
+  new-players:
+    # What permission is required for a player to be considered for ranking up
+    required-permission: "ranktimer.newplayer"
+    # How many minutes the player should play before being ranked up (1440 = 24 hrs)
+    minutes-played: 1440
+    # What ranks to give the player
+    ranks-to-give:
+    - Member
+    # What ranks to remove from the player
+    ranks-to-remove: []
+    # Permissions to give directly to the player
+    perms-to-give: []
+    # Permissions to remove directly from the player
+    perms-to-remove: []
+    # A message to send to the player to let them know they've been promoted, supports {USER} placeholder.
+    message: "&bYou've been promoted to &aMember&b, Thanks for playing, {USER}!"
+    # The message to log to the console for record-keeping, supports {USER} placeholder.
+    console-message: "&b{USER} has been promoted to Member for playing for 24 hours"
