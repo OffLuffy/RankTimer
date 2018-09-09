@@ -1,8 +1,8 @@
 package me.offluffy.RankTimer;
 
-import commands.RankTimerReload;
-import commands.RankTimerToggle;
-import commands.RankTimerToggleMetrics;
+import me.offluffy.RankTimer.commands.RankTimerReload;
+import me.offluffy.RankTimer.commands.RankTimerToggle;
+import me.offluffy.RankTimer.commands.RankTimerToggleMetrics;
 import me.offluffy.RankTimer.utils.LoggablePlugin;
 import net.milkbowl.vault.permission.Permission;
 import org.apache.commons.lang.text.StrSubstitutor;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("SpellCheckingInspection")
-public class RankTimer extends LoggablePlugin implements Listener {
+public class RankTimer extends LoggablePlugin {
 
 	private static Metrics metrics;
 	private Permission perms;
@@ -38,7 +38,6 @@ public class RankTimer extends LoggablePlugin implements Listener {
 		if (getConfig().getBoolean("enable-metrics", true)) { metrics = new Metrics(this); } else { metrics = null; }
 		enabled = getConfig().getBoolean("enabled", true);
 
-		getServer().getPluginManager().registerEvents(this, this);
 		getServer().getPluginCommand("ranktimertoggle").setExecutor(new RankTimerToggle(this));
 		getServer().getPluginCommand("ranktimertogglemetrics").setExecutor(new RankTimerToggleMetrics(this));
 		getServer().getPluginCommand("ranktimerreload").setExecutor(new RankTimerReload(this));
@@ -102,7 +101,7 @@ public class RankTimer extends LoggablePlugin implements Listener {
 						}
 					}
 				}
-			}, 100L, 100L);
+			}, 600L, 600L);
 		}
 	}
 

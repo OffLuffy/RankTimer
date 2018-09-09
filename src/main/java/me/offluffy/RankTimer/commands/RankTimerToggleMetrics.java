@@ -1,4 +1,4 @@
-package commands;
+package me.offluffy.RankTimer.commands;
 
 import me.offluffy.RankTimer.RankTimer;
 import org.bukkit.ChatColor;
